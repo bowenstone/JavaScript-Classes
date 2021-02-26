@@ -19,7 +19,7 @@ class Passenger {
     constructor (survived, pclass, name, sex, age, siblingsSpouses , parentsChildren, fare) {
         this.survived = survived;
         this.pclass = pclass;
-        this.name = nameField(name);
+        this.name =  this.parseName(name);
         this.sex = sex;
         this.age = age;
         this.siblingsSpouses = siblingsSpouses;
@@ -27,10 +27,12 @@ class Passenger {
         this.fare =  fare;
 
     }
-
-    set nameField (name) {
-        name = this.name.split(" ", 2); 
+    parseName (name){
+        this.name = name.split(" ", 3);
+        this.title = this.name[0];
+        return this.name;
     }
+
 }
 
 let bob = new Passenger(1, 3, "Mr. Bob Hardy", "male", 22, 1, 0, 7.25);
