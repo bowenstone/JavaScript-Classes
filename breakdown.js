@@ -10,7 +10,7 @@ let arrayOfAttributes = [];
 for ( let i = 0; i < arrayOfStrings.length ; i++) {
     arrayOfAttributes[i] = arrayOfStrings[i].split(',');
 };
-    console.table(arrayOfAttributes[0][2]);
+    // console.table(arrayOfAttributes[0][2]);
 
 //Build a class
 
@@ -46,7 +46,6 @@ let manifest = [];
 
 for ( let i = 0; i < arrayOfAttributes.length; i++){
     manifest[i] = new Passenger(arrayOfAttributes[i][0], arrayOfAttributes[i][1], arrayOfAttributes[i][2], arrayOfAttributes[i][3], arrayOfAttributes[i][4], arrayOfAttributes[i][5] , arrayOfAttributes[i][6], arrayOfAttributes[i][7])
-    // manifest[i] = new Passenger(arrayOfAttributes[0]);
 }
 
 console.table(manifest);
@@ -54,21 +53,9 @@ console.table(manifest);
 // let bob = new Passenger(1, 3, "Mr. Bob Hardy", "male", 22, 1, 0, 7.25);
 
 // console.log(bob);
-// for (let i = 0; i < 2; i++) {
-//     let tr = document.getElementsByTagName('tr')[1];
-//     let td = document.createElement('td');
-//     td.textContent = arrayOfAttributes[i][2];
-//     tr.appendChild(td);
-//     for( let j= 0; j < arrayOfAttributes.length; j++) {
-//        if ( j !== 2 ){
-//         let tr = document.getElementsByTagName('tr')[1];
-//         let td = document.createElement('td');
-//     	td.textContent = arrayOfAttributes[i][j];
-//         tr.appendChild(td);
-//         console.log(arrayOfAttributes[i][j]);
-//        }
-//     }
-// }
+
+//Apply information to the Table 
+//Makes new row and table data shot for each iteration
 let pssngrTable = document.getElementById("pssngrTable");
 
 for(let i = 0; i < manifest.length; i++){
